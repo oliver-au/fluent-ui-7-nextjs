@@ -1,6 +1,13 @@
+import { loadTheme } from '@fluentui/react';
+import { appTheme } from '../styles/theme'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+loadTheme(appTheme);
+
+const MyApp = ({ Component, pageProps }) => {
+
+	return (
+		<Component {...pageProps} />
+	)
 }
 
 export default MyApp
