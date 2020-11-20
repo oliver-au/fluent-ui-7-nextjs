@@ -12,6 +12,7 @@ import {
   Slider,
   TextField,
   Toggle,
+  getTheme
 } from "@fluentui/react";
 
 // The parameters in initializeIcons can disable the warnings for icons have already been registered.
@@ -19,6 +20,15 @@ initializeIcons(undefined, { disableWarnings: true });
 
 const dropdownStyles: Partial<IDropdownStyles> = {
 	dropdown: { width: 300 },
+};
+
+const theme = getTheme();
+const textFieldStyles = {
+	fieldGroup: [
+		{
+			backgroundColor: theme.palette.themePrimary,
+		}
+	]
 };
 
 const options: IDropdownOption[] = [
@@ -39,7 +49,7 @@ const Home = () => {
 		<div>
 			<PrimaryButton>Hello, world</PrimaryButton>
 			<Toggle defaultChecked label="Hello" />
-			<TextField defaultValue="hello" />
+			<TextField defaultValue="hello" className={'ttest111'} styles={textFieldStyles}/>
 			<Dropdown
 				placeholder="Select an option"
 				label="Basic uncontrolled example"
