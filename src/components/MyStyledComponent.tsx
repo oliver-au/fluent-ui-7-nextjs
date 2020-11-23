@@ -6,8 +6,6 @@ import variable from '../styles/variables'
 
 const theme = getTheme();
 
-const mdMediaQuery = `@media(max-width: ${variable.md}px)`
-
 export interface IComponentClassNames {
 	root: string;
 	button: string;
@@ -17,6 +15,8 @@ export interface IComponentClassNames {
 }
 
 const getClassNames = (): IComponentClassNames => {
+	const mdMediaQuery = `@media(max-width: ${variable.md}px)`
+
 	return mergeStyleSets({
 		root: {
 			background: 'red',
@@ -41,6 +41,7 @@ const getClassNames = (): IComponentClassNames => {
 		// Parent/child selectors
 		parent: {
 			backgroundColor: theme.palette.themePrimary,
+			// May use for numerous li in ul
 			'& .child1': {
 				background: theme.palette.themeSecondary,
 				display: 'inline-block',
