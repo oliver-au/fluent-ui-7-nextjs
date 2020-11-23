@@ -1,15 +1,19 @@
-import { IStyle, mergeStyleSets } from '@uifabric/merge-styles';
+import { mergeStyleSets } from '@uifabric/merge-styles';
 import {
 	getTheme
 } from "@fluentui/react";
+import variable from '../styles/variables'
 
 const theme = getTheme();
+
+const mdMediaQuery = `@media(max-width: ${variable.md}px)`
 
 export interface IComponentClassNames {
 	root: string;
 	button: string;
 	buttonIcon: string;
 	parent: string;
+	child2: string;
 }
 
 const getClassNames = (): IComponentClassNames => {
@@ -25,7 +29,7 @@ const getClassNames = (): IComponentClassNames => {
 				background: 'blue'
 			},
 			// Media and feature queries
-			'@media(max-width: 600px)': {
+			mdMediaQuery: {
 				background: 'green',
 			},
 		},
@@ -37,18 +41,22 @@ const getClassNames = (): IComponentClassNames => {
 		// Parent/child selectors
 		parent: {
 			backgroundColor: theme.palette.themePrimary,
-			'& .child': {
+			'& .child1': {
 				background: theme.palette.themeSecondary,
 				display: 'inline-block',
 				fontFamily: 'Proxima Nova'
 			}
 		},
+		child2: {
+			backgroundColor: theme.palette.themeTertiary,
+			display: 'inline-block'
+		}
 	});
 };
 
 
 const MyStyledComponent = () => {
-	let { root, button, buttonIcon, parent } = getClassNames();
+	let { root, button, buttonIcon, parent, child2 } = getClassNames();
 
 	return (
 		<div className={root}>
@@ -56,8 +64,11 @@ const MyStyledComponent = () => {
 				<i className={buttonIcon} />
 			</button>
 			<div className={parent}>
-				<div className='child'>
-					Children
+				<div className='child1'>
+					Child1
+				</div>
+				<div className={child2}>
+					Child2
 				</div>
 			</div>
 		</div>
