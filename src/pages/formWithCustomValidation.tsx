@@ -3,7 +3,6 @@ import {
 	TextField, 
 	DefaultButton, 
 	Dropdown, 
-	DropdownMenuItemType, 
 	IDropdownStyles, 
 	IDropdownOption,
 	initializeIcons
@@ -79,8 +78,7 @@ const Form: React.FunctionComponent = () => {
 
 	};
 
-	const handleFirstNameChange = async (_, value) => {
-		
+	const handleFirstNameChange = async (event, value: string) => {
         setFirstName(value)
 	};
 
@@ -96,7 +94,7 @@ const Form: React.FunctionComponent = () => {
 		})
 	}
 	
-	const handleLastNameChange = (_, value) => {
+	const handleLastNameChange = (event, value: string) => {
         setLastName(value)
 	};
 	
@@ -112,7 +110,7 @@ const Form: React.FunctionComponent = () => {
 		})
 	}
 
-	const handleDropdownChange = (_, option) => {
+	const handleDropdownChange = (event, option) => {
 		console.log(option.key)
 		setGender(option.key)
 	}
@@ -133,7 +131,6 @@ const Form: React.FunctionComponent = () => {
 
 	return (
 		<form>
-			{console.log(111, validationErrors)}
 			<TextField
 				label="First Name"
 				name="firstName"
