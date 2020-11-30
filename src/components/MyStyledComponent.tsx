@@ -40,7 +40,7 @@ const getClassNames = (): IComponentClassNames => {
 				},
 				// Media and feature queries
 				[`@media(max-width: ${variable.md}px)`]: {
-					background: 'green',
+					background: 'yellow',
 				},
 			}
 		],
