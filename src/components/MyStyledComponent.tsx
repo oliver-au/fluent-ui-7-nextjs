@@ -12,15 +12,7 @@ export interface IComponentClassNames {
 	buttonIcon: string;
 	parent: string;
 	child2: string;
-	parent3: string;
-	child3: string;
-	child4: string;
 }
-
-const classNames = {
-	parent3: 'My-paren-3',
-	child4: 'My-Child-4'
-};
 
 const getClassNames = (): IComponentClassNames => {
 
@@ -69,40 +61,12 @@ const getClassNames = (): IComponentClassNames => {
 				display: 'inline-block'
 			}
 		],
-
-		parent3: [
-			classNames.parent3,
-			{
-				'& > li': {
-					backgroundColor: 'green'
-				}
-			}
-		],
-
-		child3: [
-			{
-				backgroundColor: 'blue',
-				':hover': {
-					background: 'white'
-				},
-			}
-		],
-		
-		child4: [
-			classNames.child4,
-			{
-			  [`.${classNames.parent3}:hover &`]: {
-				background: 'green',
-			  },
-			},
-		],
-
 	});
 };
 
 
 const MyStyledComponent = () => {
-	let { root, button, buttonIcon, parent, child2, parent3, child3, child4 } = getClassNames();
+	let { root, button, buttonIcon, parent, child2 } = getClassNames();
 
 	return (
 		<div className={root}>
@@ -116,16 +80,6 @@ const MyStyledComponent = () => {
 				<div className={child2}>
 					Child2
 				</div>
-			</div>
-			<div className={parent3}>
-				<div className={child3}>
-					Child3
-				</div>
-				<div className={child4}>
-					Child4
-				</div>
-				<li>li1</li>
-				<li>li2</li>
 			</div>
 		</div>
 	);
