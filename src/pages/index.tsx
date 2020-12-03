@@ -47,8 +47,9 @@ const options: IDropdownOption[] = [
 const Home = () => {
 	return (
 		<div>
-			<PrimaryButton>Hello, world</PrimaryButton>
-			<Toggle defaultChecked label="Hello" />
+			<PrimaryButton>Hello, world1</PrimaryButton>
+			<PrimaryButton>Hello, world2</PrimaryButton>
+			<PrimaryButton>Hello, world3</PrimaryButton>			<Toggle defaultChecked label="Hello" />
 			<TextField defaultValue="hello" className={'ttest111'} styles={textFieldStyles}/>
 			<Dropdown
 				placeholder="Select an option"

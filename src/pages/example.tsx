@@ -22,6 +22,8 @@ const Example = () => {
 		<div className={root}>
 			<h1>My Customizing Component Example</h1>
 			<MyStyledComponent/>
+			<MyStyledComponent/>
+			<MyStyledComponent/>
 		</div>
 	)
 }
